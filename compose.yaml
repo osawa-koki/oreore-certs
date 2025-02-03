@@ -1,0 +1,8 @@
+services:
+  create:
+    build:
+      context: .
+      dockerfile: Dockerfile.create
+    volumes:
+      - ./certs/:/app/certs/
+      - ./keys/:/app/keys/
