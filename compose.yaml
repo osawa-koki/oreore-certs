@@ -6,3 +6,13 @@ services:
     volumes:
       - ./certs/:/app/certs/
       - ./keys/:/app/keys/
+  nginx:
+    image: nginx:latest
+    ports:
+      - "443:443"
+    volumes:
+      - ./certs/:/etc/nginx/certs/
+      - ./keys/:/etc/nginx/keys/
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - create
