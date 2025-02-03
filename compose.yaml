@@ -7,7 +7,7 @@ services:
       - ./certs/:/app/certs/
       - ./keys/:/app/keys/
   nginx:
-    image: nginx:latest
+    image: nginx:1.25
     ports:
       - "443:443"
     volumes:
